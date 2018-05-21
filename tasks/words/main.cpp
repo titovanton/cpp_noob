@@ -67,6 +67,5 @@ main() {
   }
 
   fclose(file);
-
   printf("Number of <lines, words, chars>: %d, %d, %d\n", lines, words, chars);
 }
