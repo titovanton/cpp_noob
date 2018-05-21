@@ -44,8 +44,6 @@ main() {
           counting_word = false;
           words++;
         }
-
-        continue;
       } else {
         counting_word = true;
         chars++;
