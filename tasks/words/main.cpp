@@ -19,7 +19,6 @@ main() {
   unsigned short lines = 0;
   unsigned short words = 0;
   unsigned short chars = 0;
-  bool new_line = true;
   bool counting_word = false;
   FILE *file = fopen("input.txt", "r");
 
@@ -27,13 +26,6 @@ main() {
     for (unsigned short i = 0; i < strlen(tmp); i++) {
       // would be better to use regexp, but i guess that's 2 much for noobs
       // and i'm not sure if C++ can gimme that
-      if (tmp[i] == ' ' && new_line) {
-        chars++;
-        continue;
-      }
-
-      new_line = false;
-
       if (tmp[i] == '\n') {
         // do not count a new line spec char
         if (counting_word) {
@@ -41,7 +33,6 @@ main() {
           words++;
         }
 
-        new_line = true;
         lines++;
         continue;
       }
