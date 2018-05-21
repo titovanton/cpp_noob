@@ -15,17 +15,13 @@ bool is_spec(char chr) {
 }
 
 main() {
-  FILE *file;
   char tmp[N];
-  unsigned short lines, words, chars;
+  unsigned short lines = 0;
+  unsigned short words = 0;
+  unsigned short chars = 0;
   bool new_line = true;
-  bool counting_word;
-
-  counting_word = false;
-  lines = 0;
-  words = 0;
-  chars = 0;
-  file = fopen("input.txt", "r");
+  bool counting_word = false;
+  FILE *file = fopen("input.txt", "r");
 
   while (fgets(tmp, N, file) != NULL) {
     for (unsigned short i = 0; i < strlen(tmp); i++) {
